@@ -15,17 +15,31 @@ public class HandlingDropdownCheckBoxRadioButton extends Base {
 		Select select = new Select(dropdown);
 		//select.selectByIndex(1);
 		//select.selectByValue("python");
-		select.selectByVisibleText("SQL");
-		
-			
+		select.selectByVisibleText("SQL");	
+	}
+	
+	public void verifyCheckBox()
+	{
+		driver.navigate().to("https://www.webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html");
+		WebElement checkbox = driver.findElement(By.xpath("//input[@value=\"option-1\"]"));
+		System.out.println(checkbox.isSelected());
+		checkbox.click();
+	}
+	
+	public void verifyRadioButton()
+	{
+		driver.navigate().to("https://www.webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html");
+		WebElement radio = driver.findElement(By.xpath("//input[@value='blue']"));
+		radio.click();
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		HandlingDropdownCheckBoxRadioButton drop = new HandlingDropdownCheckBoxRadioButton();
 		drop.browserLaunch();
-		drop.verifyDropDown();
+		//drop.verifyDropDown();
+		//drop.verifyCheckBox();
+		drop.verifyRadioButton();
 	}
 
 }
