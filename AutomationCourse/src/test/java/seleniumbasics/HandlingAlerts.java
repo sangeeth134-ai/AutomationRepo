@@ -26,6 +26,17 @@ public class HandlingAlerts extends Base{
 		Alert alert = driver.switchTo().alert();
 		alert.dismiss();
 		
+	}
+	
+	public void verifyPromptAlert()
+	{
+		driver.navigate().to("https://demoqa.com/alerts");
+		WebElement prompt = driver.findElement(By.id("promtButton"));
+		prompt.click();
+		
+		Alert alert = driver.switchTo().alert();
+		alert.sendKeys("Sangeeth");
+		alert.accept();
 		
 	}
 
@@ -35,7 +46,8 @@ public class HandlingAlerts extends Base{
 		HandlingAlerts alert = new HandlingAlerts();
 		alert.browserLaunch();
 		//alert.SimpleAlert();
-		alert.verifyConfirmAlert();
+		//alert.verifyConfirmAlert();
+		alert.verifyPromptAlert();
 	}
 
 }
